@@ -18,8 +18,8 @@ public class Interviews {
 //        int[] arry = {1,2,3,4,5,6,7,8,9,10};
 //        iView.forLoop(arry);
 //        iView.forEachLoop(arry);
-        iView.startBlock("Selection Sort");
-        iView.selectSort();
+        iView.startBlock("Quick Sort");
+        iView.quickSort();
     }
 
     private void searchRunner() {
@@ -67,17 +67,34 @@ public class Interviews {
         SelectionSort select = new SelectionSort();
         int[] unsorted = {3, 1, 7, 2, 11, 8, 6, 5, 10, 9, 4, 100, 78, 93, 63, 123, 33, 3124, 1321, 99};
         System.out.print("Unsorted: [");
-        for(int i : unsorted){
+        for (int i : unsorted) {
             System.out.print(i + " ");
         }
         System.out.println("]");
         int[] sorted = select.sort(unsorted);
         System.out.print("Sorted: [");
-        for(int i : sorted){
+        for (int i : sorted) {
             System.out.print(i + " ");
         }
         System.out.println("]");
-        System.out.println("Sort of "+ unsorted.length + " item array took " + select.getCounter() + " iterations, with a time of " + select.getTimer() + " nanoseconds.");
+        System.out.println("Sort of " + unsorted.length + " item array took " + select.getCounter() + " iterations, with a time of " + select.getTimer() + " nanoseconds.");
+    }
+
+    private void quickSort() {
+        QuickSort qs = new QuickSort();
+        int[] unsorted = {3, 1, 7, 2, 11, 8, 6, 5, 10, 9, 4, 100, 78, 93, 63, 123, 33, 3124, 1321, 99};
+        System.out.print("Unsorted: [");
+        for (int i : unsorted) {
+            System.out.print(i + " ");
+        }
+        System.out.println("]");
+        int[] sorted = qs.quickSort(unsorted);
+        System.out.print("Sorted: [");
+        for (int i : sorted) {
+            System.out.print(i + " ");
+        }
+        System.out.println("]");
+        System.out.println("Sort of " + unsorted.length + " item array took " + qs.getAttempts() + " operations, with a time of " + qs.getTimer() + " nanoseconds.");
     }
 
     private void fizzle() {
